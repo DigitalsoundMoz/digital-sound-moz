@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGITAL SOUND MOZ</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#10131c;color:white;font-family:Arial,sans-serif}
+header{background:#171d29;padding:20px;text-align:center;border-bottom:2px solid #16c784}
+header h1{color:#16c784;margin:5px}
+header p{color:#bbb;font-size:13px}
+nav{display:flex;justify-content:center;gap:20px;padding:15px;flex-wrap:wrap;background:#202735}
+nav a{color:white;text-decoration:none;font-size:14px}
+.hero{text-align:center;padding:65px 20px;background:linear-gradient(135deg,#123b32,#111827)}
+.hero h2{font-size:32px;margin:10px}
+.hero span{color:#16c784}
+.hero p{color:#ddd;line-height:1.6}
+.btn{display:inline-block;background:#16c784;color:#07140e;padding:13px 22px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:12px}
+section{padding:30px 18px;max-width:1000px;margin:auto}
+h2.titulo{color:#16c784;border-bottom:1px solid #303947;padding-bottom:12px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px}
+.card{background:#202735;padding:15px;border-radius:10px;text-align:center}
+.card .cover{height:115px;background:linear-gradient(135deg,#164e41,#28354b);border-radius:8px;display:grid;place-items:center;font-size:35px}
+.card h3{font-size:16px;margin-bottom:5px}
+.card p{font-size:13px;color:#aaa}
+input,textarea{width:100%;padding:13px;margin:8px 0;background:#202735;border:1px solid #394354;border-radius:6px;color:white}
+button{background:#16c784;border:0;padding:13px 20px;border-radius:6px;font-weight:bold;cursor:pointer}
+.formulario{background:#202735;padding:20px;border-radius:10px}
+footer{text-align:center;background:#171d29;padding:25px;color:#aaa;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎵 DIGITAL SOUND MOZ</h1>
+<p>A voz da música moçambicana para o mundo</p>
+</header>
+
+<nav>
+<a href="#inicio">Início</a>
+<a href="#musicas">Músicas</a>
+<a href="#artistas">Artistas</a>
+<a href="#cadastro">Cadastrar artista</a>
+</nav>
+
+<div class="hero" id="inicio">
+<h2>DESCUBRA A <span>MÚSICA MOÇAMBICANA</span></h2>
+<p>Uma plataforma dedicada à divulgação de artistas,<br>músicas e talentos de Moçambique.</p>
+<a href="#musicas" class="btn">Explorar músicas</a>
+</div>
+
+<section id="musicas">
+<h2 class="titulo">🎧 Músicas em destaque</h2>
+<input id="pesquisa" placeholder="Pesquisar música ou artista..." oninput="pesquisar()">
+<div class="cards" id="lista">
+<div class="card">
+<div class="cover">🎵</div>
+<h3>Fim do Silêncio</h3>
+<p>Puto Xtrela</p>
+</div>
+<div class="card">
+<div class="cover">🎤</div>
+<h3>Novos talentos</h3>
+<p>Em breve</p>
+</div>
+<div class="card">
+<div class="cover">🇲🇿</div>
+<h3>Música de Moçambique</h3>
+<p>Em breve</p>
+</div>
+</div>
+</section>
+
+<section id="artistas">
+<h2 class="titulo">🌟 Artistas</h2>
+<p>Valorizamos os talentos de Nacala-Porto, Nampula e de todo Moçambique.</p>
+<p>O teu talento merece ser conhecido!</p>
+</section>
+
+<section id="cadastro">
+<h2 class="titulo">🎤 Cadastro de artistas</h2>
+<div class="formulario">
+<p>Queres divulgar a tua música na nossa plataforma? Regista os teus dados.</p>
+<form onsubmit="alert('Demonstração: o cadastro online será ativado na próxima etapa.');return false;">
+<input placeholder="Nome artístico" required>
+<input type="text" placeholder="Nome completo" required>
+<input type="email" placeholder="Teu email" required>
+<input placeholder="Cidade ou província" required>
+<input placeholder="Contacto WhatsApp" required>
+<textarea placeholder="Fala um pouco sobre ti e a tua música" rows="4"></textarea>
+<button type="submit">Enviar cadastro</button>
+</form>
+</div>
+</section>
+
+<footer>
+<h3>DIGITAL SOUND MOZ 🇲🇿</h3>
+<p>Uma plataforma para os artistas moçambicanos.</p>
+<p>Contacto: putoxtrelamusicmoz@gmail.com</p>
+<p>© 2026 DIGITAL SOUND MOZ. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+function pesquisar(){
+let valor=document.getElementById('pesquisa').value.toLowerCase();
+document.querySelectorAll('#lista .card').forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(valor)?'block':'none';
+});
+}
+</script>
+
+</body>
+</html>
