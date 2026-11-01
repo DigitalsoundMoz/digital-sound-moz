@@ -4,112 +4,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIGITAL SOUND MOZ</title>
+<meta name="description" content="DIGITAL SOUND MOZ - Descubra, conheça e valorize os talentos musicais de Moçambique.">
+<title>DIGITAL SOUND MOZ | Música sem fronteiras</title>
 <style>
+:root{
+--bg:#0c100f;
+--panel:#151d19;
+--green:#16c995;
+--gold:#d9b66b;
+--white:#f5f7f5;
+--muted:#a5b1aa;
+}
 *{box-sizing:border-box}
-body{margin:0;background:#10131c;color:white;font-family:Arial,sans-serif}
-header{background:#171d29;padding:20px;text-align:center;border-bottom:2px solid #16c784}
-header h1{color:#16c784;margin:5px}
-header p{color:#bbb;font-size:13px}
-nav{display:flex;justify-content:center;gap:20px;padding:15px;flex-wrap:wrap;background:#202735}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
+header{padding:20px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #26342c;flex-wrap:wrap;gap:15px}
+.logo{font-size:21px;font-weight:900;color:var(--green)}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:20px;flex-wrap:wrap}
 nav a{color:white;text-decoration:none;font-size:14px}
-.hero{text-align:center;padding:65px 20px;background:linear-gradient(135deg,#123b32,#111827)}
-.hero h2{font-size:32px;margin:10px}
-.hero span{color:#16c784}
-.hero p{color:#ddd;line-height:1.6}
-.btn{display:inline-block;background:#16c784;color:#07140e;padding:13px 22px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:12px}
-section{padding:30px 18px;max-width:1000px;margin:auto}
-h2.titulo{color:#16c784;border-bottom:1px solid #303947;padding-bottom:12px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px}
-.card{background:#202735;padding:15px;border-radius:10px;text-align:center}
-.card .cover{height:115px;background:linear-gradient(135deg,#164e41,#28354b);border-radius:8px;display:grid;place-items:center;font-size:35px}
-.card h3{font-size:16px;margin-bottom:5px}
-.card p{font-size:13px;color:#aaa}
-input,textarea{width:100%;padding:13px;margin:8px 0;background:#202735;border:1px solid #394354;border-radius:6px;color:white}
-button{background:#16c784;border:0;padding:13px 20px;border-radius:6px;font-weight:bold;cursor:pointer}
-.formulario{background:#202735;padding:20px;border-radius:10px}
-footer{text-align:center;background:#171d29;padding:25px;color:#aaa;font-size:13px}
+nav a:hover{color:var(--green)}
+.hero{padding:85px 8%;background:radial-gradient(ellipse at 85% 30%,#174b37 0%,#14231c 35%,#0c100f 75%);min-height:380px}
+.hero small{color:var(--gold);letter-spacing:3px}
+.hero h1{font-size:clamp(35px,6vw,65px);max-width:750px;margin:20px 0}
+.hero h1 span{color:var(--green)}
+.hero p{color:var(--muted);max-width:550px;line-height:1.8}
+.btn{display:inline-block;padding:14px 23px;background:var(--green);color:#07140e;text-decoration:none;border-radius:5px;font-weight:bold;margin:12px 8px 0 0}
+.btn.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+section{padding:55px 7%}
+.heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.heading h2{font-size:26px}
+.heading h2 span{color:var(--green)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid #26342c;border-radius:10px;overflow:hidden}
+.art{height:155px;display:grid;place-items:center;font-size:48px;background:linear-gradient(140deg,#164d38,#263b32,#4c3923)}
+.card-content{padding:17px}
+.card h3{margin:0 0 8px}
+.card p{color:var(--muted);font-size:13px}
+.tag{font-size:11px;color:var(--gold);letter-spacing:1px}
+.about{background:#121b16}
+.about p{color:var(--muted);line-height:1.9;max-width:750px}
+.register{background:linear-gradient(120deg,#143c2c,#17241d);text-align:center;border-radius:12px;padding:40px 20px}
+footer{background:#080c0a;padding:35px 7%;border-top:1px solid #26342c}
+footer p{color:var(--muted);font-size:13px;line-height:1.8}
+input,textarea{width:100%;padding:13px;margin:8px 0;background:#101713;border:1px solid #405047;border-radius:5px;color:white}
+form{max-width:500px;margin:25px auto;text-align:left}
+button{padding:13px 20px;background:var(--green);border:0;border-radius:5px;font-weight:bold;cursor:pointer}
+.notice{font-size:12px;color:var(--gold)}
+@media(max-width:600px){
+header{padding:18px 5%}
+nav{gap:13px}
+.hero{padding:60px 6%}
+section{padding:40px 6%}
+}
 </style>
 </head>
 <body>
 
 <header>
-<h1>🎵 DIGITAL SOUND MOZ</h1>
-<p>A voz da música moçambicana para o mundo</p>
-</header>
-
+<div class="logo">DIGITAL SOUND <span>MOZ.</span></div>
 <nav>
 <a href="#inicio">Início</a>
 <a href="#musicas">Músicas</a>
 <a href="#artistas">Artistas</a>
-<a href="#cadastro">Cadastrar artista</a>
+<a href="#sobre">Sobre nós</a>
+<a href="#cadastro">Cadastrar</a>
 </nav>
+</header>
 
+<main>
 <div class="hero" id="inicio">
-<h2>DESCUBRA A <span>MÚSICA MOÇAMBICANA</span></h2>
-<p>Uma plataforma dedicada à divulgação de artistas,<br>músicas e talentos de Moçambique.</p>
-<a href="#musicas" class="btn">Explorar músicas</a>
+<small>MOÇAMBIQUE • ÁFRICA • MUNDO</small>
+<h1>A música que nasce aqui, <span>conquista o mundo.</span></h1>
+<p>Uma plataforma dedicada à descoberta, valorização e divulgação dos artistas e talentos musicais de Moçambique.</p>
+<a class="btn" href="#musicas">Explorar música</a>
+<a class="btn secondary" href="#cadastro">Sou artista</a>
 </div>
 
 <section id="musicas">
-<h2 class="titulo">🎧 Músicas em destaque</h2>
-<input id="pesquisa" placeholder="Pesquisar música ou artista..." oninput="pesquisar()">
-<div class="cards" id="lista">
+<div class="heading">
+<h2>Em <span>destaque</span></h2>
+<span class="tag">SONS DE MOÇAMBIQUE</span>
+</div>
+<div class="cards">
 <div class="card">
-<div class="cover">🎵</div>
+<div class="art">🎵</div>
+<div class="card-content">
+<span class="tag">DESTAQUE</span>
 <h3>Fim do Silêncio</h3>
 <p>Puto Xtrela</p>
 </div>
-<div class="card">
-<div class="cover">🎤</div>
-<h3>Novos talentos</h3>
-<p>Em breve</p>
 </div>
 <div class="card">
-<div class="cover">🇲🇿</div>
-<h3>Música de Moçambique</h3>
-<p>Em breve</p>
+<div class="art">🎙️</div>
+<div class="card-content">
+<span class="tag">EM BREVE</span>
+<h3>Novos sons</h3>
+<p>Descubra novos talentos</p>
+</div>
+</div>
+<div class="card">
+<div class="art">🌍</div>
+<div class="card-content">
+<span class="tag">EM BREVE</span>
+<h3>Novos artistas</h3>
+<p>A música moçambicana</p>
+</div>
 </div>
 </div>
 </section>
 
-<section id="artistas">
-<h2 class="titulo">🌟 Artistas</h2>
-<p>Valorizamos os talentos de Nacala-Porto, Nampula e de todo Moçambique.</p>
-<p>O teu talento merece ser conhecido!</p>
+<section id="artistas" class="about">
+<div class="heading"><h2>Talento sem <span>fronteiras</span></h2></div>
+<p>A DIGITAL SOUND MOZ nasceu para dar espaço à criatividade, à diversidade e à riqueza musical moçambicana. Queremos aproximar artistas e ouvintes, revelar novos talentos e levar a nossa música cada vez mais longe.</p>
+<a class="btn" href="#cadastro">Fazer parte da plataforma</a>
+</section>
+
+<section id="sobre">
+<div class="heading"><h2>A nossa <span>missão</span></h2></div>
+<p>Valorizar os músicos, apoiar a divulgação das suas obras e construir uma comunidade musical aberta a artistas de todas as províncias de Moçambique e do mundo.</p>
 </section>
 
 <section id="cadastro">
-<h2 class="titulo">🎤 Cadastro de artistas</h2>
-<div class="formulario">
-<p>Queres divulgar a tua música na nossa plataforma? Regista os teus dados.</p>
-<form onsubmit="alert('Demonstração: o cadastro online será ativado na próxima etapa.');return false;">
-<input placeholder="Nome artístico" required>
-<input type="text" placeholder="Nome completo" required>
-<input type="email" placeholder="Teu email" required>
-<input placeholder="Cidade ou província" required>
-<input placeholder="Contacto WhatsApp" required>
-<textarea placeholder="Fala um pouco sobre ti e a tua música" rows="4"></textarea>
-<button type="submit">Enviar cadastro</button>
-</form>
+<div class="register">
+<span class="tag">A TUA MÚSICA MERECE SER OUVIDA</span>
+<h2>És artista? Junta-te a nós!</h2>
+<p>O cadastro de artistas será gratuito.</p>
+<a class="btn" href="mailto:putoxtrelamusicmoz@gmail.com?subject=Cadastro%20de%20artista">Contactar para cadastro</a>
+<p class="notice">O sistema de cadastro online estará disponível numa próxima etapa.</p>
 </div>
 </section>
+</main>
 
 <footer>
-<h3>DIGITAL SOUND MOZ 🇲🇿</h3>
-<p>Uma plataforma para os artistas moçambicanos.</p>
-<p>Contacto: putoxtrelamusicmoz@gmail.com</p>
+<div class="logo">DIGITAL SOUND <span>MOZ.</span></div>
+<p>A nossa música. A nossa identidade. O mundo a ouvir.</p>
+<p>Contacto oficial: putoxtrelamusicmoz@gmail.com</p>
 <p>© 2026 DIGITAL SOUND MOZ. Todos os direitos reservados.</p>
 </footer>
-
-<script>
-function pesquisar(){
-let valor=document.getElementById('pesquisa').value.toLowerCase();
-document.querySelectorAll('#lista .card').forEach(card=>{
-card.style.display=card.innerText.toLowerCase().includes(valor)?'block':'none';
-});
-}
-</script>
 
 </body>
 </html>
