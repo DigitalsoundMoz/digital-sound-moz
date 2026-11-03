@@ -143,5 +143,17 @@ section{padding:40px 6%}
 <p>© 2026 DIGITAL SOUND MOZ. Todos os direitos reservados.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+
+<script>
+const supabaseClient = window.supabase.createClient(
+  window.SUPABASE_CONFIG.url,
+  window.SUPABASE_CONFIG.key
+);
+
+console.log("DIGITAL SOUND MOZ: Supabase conectado!");
+</script>
+
 </body>
 </html>
