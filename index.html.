@@ -4,155 +4,416 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="DIGITAL SOUND MOZ - Descubra, conheça e valorize os talentos musicais de Moçambique.">
-<title>DIGITAL SOUND MOZ | Música sem fronteiras</title>
+<meta name="description" content="PORTAL NORTE - Músicas de Sucesso. Descubra e valorize os talentos musicais de Moçambique.">
+<title>PORTAL NORTE | Músicas de Sucesso</title>
+
 <style>
-:root{
---bg:#0c100f;
---panel:#151d19;
---green:#16c995;
---gold:#d9b66b;
---white:#f5f7f5;
---muted:#a5b1aa;
+:root {
+  --bg:#0c100f;
+  --panel:#151d19;
+  --green:#16c995;
+  --gold:#d9b66b;
+  --white:#f5f7f5;
+  --muted:#a5b1aa;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif}
-header{padding:20px 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #26342c;flex-wrap:wrap;gap:15px}
-.logo{font-size:21px;font-weight:900;color:var(--green)}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--white);
+  font-family:Arial,sans-serif;
+}
+header{
+  padding:20px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
+  border-bottom:1px solid #26342c;
+}
+.logo{
+  font-size:23px;
+  font-weight:900;
+  color:var(--green);
+}
 .logo span{color:var(--gold)}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:14px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+}
 nav a:hover{color:var(--green)}
-.hero{padding:85px 8%;background:radial-gradient(ellipse at 85% 30%,#174b37 0%,#14231c 35%,#0c100f 75%);min-height:380px}
+.hero{
+  padding:85px 8%;
+  min-height:400px;
+  background:radial-gradient(ellipse at 85% 30%,#174b37,#14231c 35%,#0c100f 75%);
+}
 .hero small{color:var(--gold);letter-spacing:3px}
-.hero h1{font-size:clamp(35px,6vw,65px);max-width:750px;margin:20px 0}
+.hero h1{
+  font-size:clamp(35px,6vw,65px);
+  max-width:750px;
+}
 .hero h1 span{color:var(--green)}
-.hero p{color:var(--muted);max-width:550px;line-height:1.8}
-.btn{display:inline-block;padding:14px 23px;background:var(--green);color:#07140e;text-decoration:none;border-radius:5px;font-weight:bold;margin:12px 8px 0 0}
-.btn.secondary{background:transparent;border:1px solid var(--gold);color:var(--gold)}
+.hero p{
+  color:var(--muted);
+  max-width:580px;
+  line-height:1.8;
+}
+.btn{
+  display:inline-block;
+  padding:14px 23px;
+  background:var(--green);
+  color:#07140e;
+  text-decoration:none;
+  border:0;
+  border-radius:5px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:10px 5px 0 0;
+}
+.btn.secondary{
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
+}
 section{padding:55px 7%}
-.heading{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.heading h2{font-size:26px}
 .heading h2 span{color:var(--green)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid #26342c;border-radius:10px;overflow:hidden}
-.art{height:155px;display:grid;place-items:center;font-size:48px;background:linear-gradient(140deg,#164d38,#263b32,#4c3923)}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--panel);
+  border:1px solid #26342c;
+  border-radius:10px;
+  overflow:hidden;
+}
+.art{
+  height:155px;
+  display:grid;
+  place-items:center;
+  font-size:48px;
+  background:linear-gradient(140deg,#164d38,#263b32,#4c3923);
+}
 .card-content{padding:17px}
-.card h3{margin:0 0 8px}
-.card p{color:var(--muted);font-size:13px}
-.tag{font-size:11px;color:var(--gold);letter-spacing:1px}
+.card p,.muted{color:var(--muted)}
+.tag{
+  font-size:11px;
+  color:var(--gold);
+  letter-spacing:1px;
+}
 .about{background:#121b16}
-.about p{color:var(--muted);line-height:1.9;max-width:750px}
-.register{background:linear-gradient(120deg,#143c2c,#17241d);text-align:center;border-radius:12px;padding:40px 20px}
-footer{background:#080c0a;padding:35px 7%;border-top:1px solid #26342c}
+.about p{line-height:1.9;color:var(--muted)}
+.register{
+  background:linear-gradient(120deg,#143c2c,#17241d);
+  text-align:center;
+  border-radius:12px;
+  padding:40px 20px;
+}
+.auth-box{
+  max-width:480px;
+  margin:25px auto;
+  padding:25px;
+  background:var(--panel);
+  border:1px solid #35463b;
+  border-radius:12px;
+  text-align:left;
+}
+.auth-box h3{text-align:center}
+input{
+  width:100%;
+  padding:14px;
+  margin:8px 0 15px;
+  background:#101713;
+  border:1px solid #405047;
+  border-radius:5px;
+  color:white;
+}
+label{font-size:13px;color:var(--muted)}
+.auth-box button{width:100%}
+#message{
+  font-size:13px;
+  line-height:1.6;
+  color:var(--gold);
+  overflow-wrap:anywhere;
+}
+footer{
+  background:#080c0a;
+  padding:35px 7%;
+  border-top:1px solid #26342c;
+}
 footer p{color:var(--muted);font-size:13px;line-height:1.8}
-input,textarea{width:100%;padding:13px;margin:8px 0;background:#101713;border:1px solid #405047;border-radius:5px;color:white}
-form{max-width:500px;margin:25px auto;text-align:left}
-button{padding:13px 20px;background:var(--green);border:0;border-radius:5px;font-weight:bold;cursor:pointer}
-.notice{font-size:12px;color:var(--gold)}
 @media(max-width:600px){
-header{padding:18px 5%}
-nav{gap:13px}
-.hero{padding:60px 6%}
-section{padding:40px 6%}
+  header{padding:18px 5%}
+  nav{gap:12px}
+  .hero{padding:60px 6%}
+  section{padding:40px 6%}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">DIGITAL SOUND <span>MOZ.</span></div>
-<nav>
-<a href="#inicio">Início</a>
-<a href="#musicas">Músicas</a>
-<a href="#artistas">Artistas</a>
-<a href="#sobre">Sobre nós</a>
-<a href="#cadastro">Cadastrar</a>
-</nav>
+  <div class="logo">PORTAL <span>NORTE.</span></div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#musicas">Músicas</a>
+    <a href="#artistas">Artistas</a>
+    <a href="#sobre">Sobre nós</a>
+    <a href="#cadastro">Entrar</a>
+  </nav>
 </header>
 
 <main>
+
 <div class="hero" id="inicio">
-<small>MOÇAMBIQUE • ÁFRICA • MUNDO</small>
-<h1>A música que nasce aqui, <span>conquista o mundo.</span></h1>
-<p>Uma plataforma dedicada à descoberta, valorização e divulgação dos artistas e talentos musicais de Moçambique.</p>
-<a class="btn" href="#musicas">Explorar música</a>
-<a class="btn secondary" href="#cadastro">Sou artista</a>
+  <small>MOÇAMBIQUE • ÁFRICA • MUNDO</small>
+  <h1>A música que nasce aqui, <span>conquista o mundo.</span></h1>
+  <p>
+    Descubra, ouça e valorize os talentos musicais de Moçambique.
+    Uma plataforma criada para aproximar artistas e ouvintes.
+  </p>
+  <a class="btn" href="#musicas">Explorar músicas</a>
+  <a class="btn secondary" href="#cadastro">Sou artista</a>
 </div>
 
 <section id="musicas">
-<div class="heading">
-<h2>Em <span>destaque</span></h2>
-<span class="tag">SONS DE MOÇAMBIQUE</span>
-</div>
-<div class="cards">
-<div class="card">
-<div class="art">🎵</div>
-<div class="card-content">
-<span class="tag">DESTAQUE</span>
-<h3>Fim do Silêncio</h3>
-<p>Puto Xtrela</p>
-</div>
-</div>
-<div class="card">
-<div class="art">🎙️</div>
-<div class="card-content">
-<span class="tag">EM BREVE</span>
-<h3>Novos sons</h3>
-<p>Descubra novos talentos</p>
-</div>
-</div>
-<div class="card">
-<div class="art">🌍</div>
-<div class="card-content">
-<span class="tag">EM BREVE</span>
-<h3>Novos artistas</h3>
-<p>A música moçambicana</p>
-</div>
-</div>
-</div>
+  <div class="heading">
+    <h2>Músicas em <span>destaque</span></h2>
+    <p class="tag">SONS DE MOÇAMBIQUE</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="art">🎵</div>
+      <div class="card-content">
+        <span class="tag">DESTAQUE</span>
+        <h3>Fim do Silêncio</h3>
+        <p>Puto Xtrela</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="art">🎙️</div>
+      <div class="card-content">
+        <span class="tag">EM BREVE</span>
+        <h3>Novos sons</h3>
+        <p>Descubra novos talentos.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="art">🌍</div>
+      <div class="card-content">
+        <span class="tag">EM BREVE</span>
+        <h3>Novos artistas</h3>
+        <p>A música moçambicana para o mundo.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="artistas" class="about">
-<div class="heading"><h2>Talento sem <span>fronteiras</span></h2></div>
-<p>A DIGITAL SOUND MOZ nasceu para dar espaço à criatividade, à diversidade e à riqueza musical moçambicana. Queremos aproximar artistas e ouvintes, revelar novos talentos e levar a nossa música cada vez mais longe.</p>
-<a class="btn" href="#cadastro">Fazer parte da plataforma</a>
+  <div class="heading">
+    <h2>Talento sem <span>fronteiras</span></h2>
+  </div>
+  <p>
+    O PORTAL NORTE nasceu para dar espaço à criatividade,
+    à diversidade e à riqueza musical moçambicana.
+    Queremos revelar talentos de todas as províncias.
+  </p>
+  <a class="btn" href="#cadastro">Fazer parte da plataforma</a>
 </section>
 
 <section id="sobre">
-<div class="heading"><h2>A nossa <span>missão</span></h2></div>
-<p>Valorizar os músicos, apoiar a divulgação das suas obras e construir uma comunidade musical aberta a artistas de todas as províncias de Moçambique e do mundo.</p>
+  <div class="heading">
+    <h2>A nossa <span>missão</span></h2>
+  </div>
+  <p class="muted">
+    Valorizar músicos, apoiar a divulgação das suas obras
+    e construir uma comunidade musical aberta a Moçambique
+    e ao mundo.
+  </p>
+  <p class="tag">SONORIDADE E TECNOLOGIA</p>
 </section>
 
 <section id="cadastro">
-<div class="register">
-<span class="tag">A TUA MÚSICA MERECE SER OUVIDA</span>
-<h2>És artista? Junta-te a nós!</h2>
-<p>O cadastro de artistas será gratuito.</p>
-<a class="btn" href="mailto:putoxtrelamusicmoz@gmail.com?subject=Cadastro%20de%20artista">Contactar para cadastro</a>
-<p class="notice">O sistema de cadastro online estará disponível numa próxima etapa.</p>
-</div>
+  <div class="register">
+    <span class="tag">A TUA MÚSICA MERECE SER OUVIDA</span>
+    <h2>És artista? Junta-te a nós!</h2>
+    <p>O cadastro de artistas é gratuito inicialmente.</p>
+
+    <div class="auth-box">
+      <h3>Cadastro de artista</h3>
+
+      <form id="registerForm">
+        <label>Nome artístico ou nome completo</label>
+        <input id="fullName" type="text" placeholder="O teu nome" required>
+
+        <label>Email</label>
+        <input id="registerEmail" type="email" placeholder="O teu email" required>
+
+        <label>Palavra-passe</label>
+        <input id="registerPassword" type="password" minlength="6" placeholder="Mínimo 6 caracteres" required>
+
+        <button class="btn" type="submit">Criar conta</button>
+      </form>
+
+      <hr style="border-color:#35463b;margin:25px 0">
+
+      <h3>Já tens uma conta?</h3>
+
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="O teu email" required>
+
+        <label>Palavra-passe</label>
+        <input id="loginPassword" type="password" placeholder="A tua palavra-passe" required>
+
+        <button class="btn" type="submit">Entrar na conta</button>
+      </form>
+
+      <button id="logoutButton" class="btn secondary" type="button" hidden>
+        Terminar sessão
+      </button>
+
+      <p id="message" role="status" aria-live="polite">
+        Preenche os dados para começar.
+      </p>
+    </div>
+  </div>
 </section>
+
 </main>
 
 <footer>
-<div class="logo">DIGITAL SOUND <span>MOZ.</span></div>
-<p>A nossa música. A nossa identidade. O mundo a ouvir.</p>
-<p>Contacto oficial: putoxtrelamusicmoz@gmail.com</p>
-<p>© 2026 DIGITAL SOUND MOZ. Todos os direitos reservados.</p>
+  <div class="logo">PORTAL <span>NORTE.</span></div>
+  <p>Músicas de Sucesso</p>
+  <p>Sonoridade e Tecnologia</p>
+  <p>Do Norte para todo Moçambique!</p>
+  <p>Contacto: putoxtrelamusicmoz@gmail.com</p>
+  <p>© 2026 PORTAL NORTE. Todos os direitos reservados.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="config.js"></script>
 
 <script>
-const supabaseClient = window.supabase.createClient(
-  window.SUPABASE_CONFIG.url,
-  window.SUPABASE_CONFIG.key
-);
+(function () {
+  const message = document.getElementById("message");
+  const logoutButton = document.getElementById("logoutButton");
+  const registerForm = document.getElementById("registerForm");
+  const loginForm = document.getElementById("loginForm");
 
-console.log("DIGITAL SOUND MOZ: Supabase conectado!");
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  if (!window.supabase || !window.SUPABASE_CONFIG ||
+      !window.SUPABASE_CONFIG.url || !window.SUPABASE_CONFIG.key) {
+    showMessage("Não foi possível carregar a configuração do Supabase. Verifica o ficheiro config.js.");
+    return;
+  }
+
+  const supabaseClient = window.supabase.createClient(
+    window.SUPABASE_CONFIG.url,
+    window.SUPABASE_CONFIG.key
+  );
+
+  registerForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("registerEmail").value.trim();
+    const password = document.getElementById("registerPassword").value;
+
+    if (!fullName) {
+      showMessage("Introduz o teu nome.");
+      return;
+    }
+
+    showMessage("A criar a tua conta...");
+
+    const { data, error } = await supabaseClient.auth.signUp({
+      email: email,
+      password: password,
+      options: {
+        data: {
+          full_name: fullName
+        }
+      }
+    });
+
+    if (error) {
+      showMessage("Erro no cadastro: " + error.message);
+      return;
+    }
+
+    if (data.session) {
+      showMessage("Conta criada com sucesso! Já podes entrar na plataforma.");
+    } else {
+      showMessage("Cadastro iniciado! Verifica o teu email para confirmar a conta.");
+    }
+
+    registerForm.reset();
+  });
+
+  loginForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    showMessage("A verificar os teus dados...");
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (error) {
+      showMessage("Não foi possível entrar: " + error.message);
+      return;
+    }
+
+    showMessage("Sessão iniciada com sucesso!");
+  });
+
+  logoutButton.addEventListener("click", async function () {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      showMessage("Erro ao terminar sessão: " + error.message);
+      return;
+    }
+
+    showMessage("Sessão terminada.");
+  });
+
+  supabaseClient.auth.onAuthStateChange(function (event, session) {
+    logoutButton.hidden = !session;
+
+    if (session && event === "SIGNED_IN") {
+      showMessage("Conta autenticada: " + session.user.email);
+    }
+  });
+
+  supabaseClient.auth.getSession().then(function ({ data, error }) {
+    if (error) {
+      showMessage("Não foi possível verificar a sessão.");
+      return;
+    }
+
+    logoutButton.hidden = !data.session;
+  });
+
+  console.log("PORTAL NORTE: Supabase inicializado.");
+})();
 </script>
 
 </body>
